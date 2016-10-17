@@ -70,7 +70,7 @@
         <a class="button" href="#">Button</a>
         
         <div class="button dropdown">
-          Dropdown Button
+          <label>Dropdown Button</label>
           <select>
             <option>An option</option>
             <option>Another option</option>
@@ -83,5 +83,14 @@
         <p>I use this technique for simple dropdowns. Not a replacement for <code>&lt;select&gt;</code> since it doesn't set the content to the selected option, but works well for a dropdown menu-type button.</p>
       </div>
     </section>
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script>
+      $('.button.dropdown select').on('change', function () {
+        $(this).closest('.button').find('label').text(
+          $(this).find(':selected').text()
+        );
+      });
+    </script>
   </body>
 </html>
