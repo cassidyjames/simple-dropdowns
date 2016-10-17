@@ -15,6 +15,7 @@
     <style>
       .button {
         display: inline-block; 
+        padding: 0.5em 1em;
         
         background: transparent;
 
@@ -22,6 +23,36 @@
         border-radius: 4px;
         
         font: inherit;
+      }
+      
+      .button.dropdown {
+        position: relative;
+      }
+      
+      .button.dropdown select {
+        bottom: 0;
+        height: 100%;
+        left: 0;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+
+        opacity: 0;
+      }
+      
+      .button.dropdown::after {
+        content: "▼";
+        
+        margin-left: 0.25em;
+        position: relative;
+        right: -0.25em;
+
+        line-height: 1em;
+
+        pointer-events: none;
       }
     </style>
   </head>
